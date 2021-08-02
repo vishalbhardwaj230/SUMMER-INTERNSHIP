@@ -1,0 +1,94 @@
+package packets;
+import java.util.Scanner;
+public class Anagram {
+public static void main(String[] args) {
+	Scanner sc =new Scanner(System.in);
+	
+	System.out.println("Enter the first and second string");
+	String S1= sc.nextLine();
+	String S2 = sc.nextLine();
+	boolean Visited[] = new boolean[S2.length()]; 
+	boolean isAnagram=true;
+//	if(S1.length()==S2.length()) {
+//	for(int i=0; i<S1.length(); i++)
+//	{
+//		char c =S1.charAt(i);
+//		isAnagram=false;
+//		for(int j=0; j<S2.length();j++)
+//		{
+//			if(S2.charAt(j)==c && !Visited[j])
+//			{
+//				Visited[j]=true;
+//				isAnagram=true;
+//				break;
+//			}
+//		}
+//		if(!isAnagram)
+//		{
+//			break;
+//		}
+//	}
+//	
+//	}
+
+//*******************************************************
+
+// For Optimized Solution
+//	
+//	int al[] = new int[256];
+//	int bl[] = new int [256];
+//	
+//	for(char c : S1.toCharArray())
+//	{
+//		int index = (int) c;
+//		al[index]++;
+//	}
+//	
+//	for(char c : S2.toCharArray())
+//	{
+//		int index = (int) c;
+//		bl[index]++;
+//	}
+//	for(int i=0;i<256;i++)
+//	{
+//		if(al[i]!=bl[i]);
+//		isAnagram =false;
+//		break;
+//	}
+//	
+
+//**************************************************
+
+// For More Optimization we will use use one array
+	
+	int al[] = new int[256];
+//	int bl[] = new int [256];
+	
+	for(char c : S1.toCharArray())
+	{
+		int index = (int) c;
+		al[index]++;
+	}
+	
+	for(char c : S2.toCharArray())
+	{
+		int index = (int) c;
+		al[index]--;
+	}
+	for(int i=0;i<256;i++)
+	{
+		if(al[i]!=0) {
+		isAnagram =false;
+		break;
+		}
+	}
+	
+	if(isAnagram)
+	{
+		System.out.println("Anagram");
+	}
+	else {
+		System.out.println("Not Anagram");
+	}
+}
+}

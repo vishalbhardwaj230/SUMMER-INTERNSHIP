@@ -1,0 +1,37 @@
+package FileHandling;
+import java.util.Scanner;
+ class RotateArrayGFG {
+public static void main(String[] args) {
+	int i,j;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the size of array");
+	int n = sc. nextInt();
+	System.out.println("Enter the no. of rotations you want");
+	int d = sc.nextInt();
+	System.out.println("Enter an array");
+	int arr[] = new int[n];
+	for(i =0;i<n;i++)
+	{
+		arr[i]= sc.nextInt();
+	}
+	
+	for(i=0;i<d;i++)
+	{int temp=0;
+	temp = arr[0];	
+	for( j=0;j<n-1;j++)
+		{
+		
+		arr[j]=arr[j+1];
+		
+		}
+	arr[n-1]=temp;
+	}
+		
+	
+	for(i=0;i<n;i++)
+	{
+		System.out.println(arr[i]);
+	}
+	
+}
+}

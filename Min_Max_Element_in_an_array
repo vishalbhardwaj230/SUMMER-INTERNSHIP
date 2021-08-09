@@ -1,0 +1,36 @@
+//Find the maximum and minimum element in an array
+//Brute-force-method------my opinion is,
+//I think this is the worst method i have used....hahaha
+// Solved in an un-optimized way
+package Pack;
+import java.util.Scanner;
+public class Max_Min_Element_in_an_array {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the size of array");
+	int n = sc.nextInt();
+	int arr[]= new int[n];
+	System.out.println("Enter an array");
+	for(int i =0; i <n; i++)
+	{
+		arr[i]= sc.nextInt();
+	}
+	for(int i=0 ; i<n; i++)
+	{
+		if(arr[0]<arr[i])
+		{
+			arr[0]=arr[i];
+		}
+	}
+	System.out.println("Max number is: " + arr[0]);
+	for(int i=0 ; i<n; i++)
+	{
+		if(arr[0]>arr[i])
+		{
+			arr[0]=arr[i];
+		}
+	}
+	
+	System.out.println("Min number is: " + arr[0]);
+}
+}

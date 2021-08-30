@@ -1,0 +1,80 @@
+// NOTE OPTIMIZED CODE
+
+import java.util.*;
+public class FIRST_N_LAST_INDEX {
+public static void main(String[] args) {
+	
+	System.out.println("Enter the size of array");
+	Scanner sc = new Scanner(System.in);  // taking scanner to take input
+	int n =sc.nextInt();                   // taking size of input array using Scanner class
+	System.out.println("Enter the array");
+	int arr[]=new int[n];                 // initializing an array
+	for(int i=0; i<n;i++)
+	{
+		arr[i]=sc.nextInt();              // taking values in the array using loop
+	}
+	System.out.println("Entered elements are: ");
+	for(int i = 0; i<n;i++)
+	{
+		System.out.print(" " + arr[i]);    // printing elements of the array using for loop
+	}
+	System.out.println();
+	// sorting the array using Arrays.sort
+	Arrays.sort(arr);
+	System.out.println("Sorted array is: ");
+	{
+		for(int i=0;i<n;i++)
+		System.out.print(" "+ arr[i]);
+	}
+	System.out.println();
+	System.out.println("Enter the key to search first and last index");
+	int k= sc.nextInt();
+	for(int i=0;i<n;i++)
+	{
+		if(k==arr[i])
+		{
+			System.out.println("first index "+ i);
+			break;
+		}
+		
+	}
+	for(int i=n-1;i>0;i--)
+	{
+		if(k==arr[i])
+		{
+			System.out.println("last index "+ i);
+			break;
+		}
+		
+	}
+	sc.close();
+}
+}
+
+//Using GFG method. OPTIMIZED CODE
+
+/*
+ * class GFG { ArrayList<Long> find(long arr[], int n, int x) { int j=-1;
+ * ArrayList<Long> a=new ArrayList<Long>();
+ * 
+ * 
+ * 
+ * for(int i=0;i<n;i++) { if(arr[i]==x) { a.add((long)i); break; } if(i==n-1)
+ * a.add((long)j);
+ * 
+ * }
+ * 
+ * 
+ * 
+ * 
+ * for(int i=n-1;i>=0;i--) { if(arr[i]==x) { a.add((long)i); break; } if(i==0)
+ * a.add((long)j);
+ * 
+ * }
+ * 
+ * 
+ * 
+ * 
+ * 
+ * return a; } }
+ */

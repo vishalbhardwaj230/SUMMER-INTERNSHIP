@@ -1,0 +1,32 @@
+// Not an Optimized Solution
+
+import java.util.Scanner;
+
+public class Value_equal_to_index_value {
+public static void main(String[] args) {
+	System.out.println("Enter the size of array");
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	int arr[]= new int[n];
+	System.out.println("Enter elements of the array");
+	for(int i = 0; i<n;i++)
+	{
+		arr[i]= sc.nextInt(); // left side represents a variable that denotes an element
+	}
+	System.out.println("Entered elements are: ");
+	
+		for(int i =0; i<n;i++)
+		{
+			System.out.println(arr[i]);
+		}
+		System.out.println("OUTPUT: ");
+	for(int i=0;i<n;i++)
+	{
+		if(arr[i]==i)
+		{
+			System.out.println(arr[i]);
+		
+		}
+	}
+}
+}
